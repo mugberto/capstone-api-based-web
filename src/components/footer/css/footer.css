@@ -1,0 +1,28 @@
+footer {
+  position: relative;
+  color: #ccc;
+  padding: 2rem;
+}
+
+footer::before {
+  position: absolute;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.2);
+  content: '';
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+}
+footer p {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+footer p a {
+  color: #db2525;
+}
+
+footer p a:hover {
+  text-decoration: none;
+}
