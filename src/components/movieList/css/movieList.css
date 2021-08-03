@@ -1,0 +1,3 @@
+.movie-list{
+  min-height: calc( 100vh - 87.5px - 82px);
+}
