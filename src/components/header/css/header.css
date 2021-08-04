@@ -1,5 +1,5 @@
 header {
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 header nav {
@@ -35,7 +35,6 @@ header nav .menu-items {
 .genre-btn.active {
   background-color: #db2525;
   border: 1px solid #db2525;
-
 }
 
 .genre-btn:hover {

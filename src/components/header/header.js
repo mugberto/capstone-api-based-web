@@ -1,14 +1,14 @@
-import logo from '../../images/logo.png'
+import logo from '../../images/logo.png';
 import { makeList } from '../movieList/movieList';
-import './css/header.css'
+import './css/header.css';
 
 const makeNavBtn = () => {
   const allBtn = document.querySelectorAll('.genre-btn');
   allBtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       allBtn.forEach((item) => item.classList.remove('active'));
-      e.target.classList.add('active')
-      switch(e.target.textContent){
+      e.target.classList.add('active');
+      switch (e.target.textContent) {
         case 'Top Rated':
           makeList();
           break;
@@ -25,8 +25,7 @@ const makeNavBtn = () => {
   });
 };
 
-const header = () => {    
-    return `
+const header = () => `
         <header>
             <nav>
                 <a class="logo" href="index.html">
@@ -39,8 +38,7 @@ const header = () => {
                 </ul>
             </nav>
         </header>
-    `
-};
+    `;
 
 export default header;
 export { makeNavBtn };
