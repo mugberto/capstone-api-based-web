@@ -5,7 +5,6 @@ const makeList = async (genre='top_rated') => {
   if (genre === 'top_rated') {
     response = await fetch('https://api.themoviedb.org/3/movie/top_rated/?api_key=351e94f667108cdc271b0892fb6a48a4');
   } else {
-    console.log(genre);
     response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=351e94f667108cdc271b0892fb6a48a4&with_genres=${genre}`);
   }
   const json = await response.json();
@@ -21,7 +20,7 @@ const makeList = async (genre='top_rated') => {
             <h3>${movie.title}</h3>
             <div>5 likes</div>
           </div>
-          <button class="comment-btn">Comment</button>
+          <button data-key="${movie.id}" class="comment-btn">Comment</button>
         </div>
       </div>
     `
