@@ -1,3 +1,40 @@
 .movie-list{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: 1440px;
+  margin: 0 auto;
   min-height: calc( 100vh - 87.5px - 82px);
+}
+
+.movie-card {
+  width: 30%;
+  padding: 2rem;
+}
+
+.poster {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-description {
+  color: white;
+  background-color: #191919;
+  padding: 1rem;
+}
+
+.title-row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.comment-btn {
+  display: block;
+  border: none;
+  background-color: #db2525;
+  color: white;
+  padding: 1em 2em;
 }
