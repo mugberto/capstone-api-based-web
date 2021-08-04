@@ -1,5 +1,10 @@
 import './css/movieList.css';
 
+const getLikes = (id, likesArr) => {
+  const likesItem = likesArr.find((item) => { return item.item_id === id }) || null;
+  return likesItem === null ? 0 : likesItem.likes; 
+}
+
 const makeList = async (genre='top_rated') => {
   let response;
   if (genre === 'top_rated') {
@@ -9,6 +14,9 @@ const makeList = async (genre='top_rated') => {
   }
   const json = await response.json();
   const movies = json.results;
+
+  const likesResponse = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/kqb4B7zblSLILXPp3BYH/likes');
+  const likesArr = await likesResponse.json();
   let list = document.querySelector('.movie-list');
   list.innerHTML = '';
   movies.forEach((movie) => {
@@ -18,7 +26,7 @@ const makeList = async (genre='top_rated') => {
         <div class="card-description">
           <div class="title-row">
             <h3>${movie.title}</h3>
-            <div>5 likes</div>
+            <div>${getLikes(movie.id, likesArr)} likes</div>
           </div>
           <button data-key="${movie.id}" class="comment-btn">Comment</button>
         </div>
