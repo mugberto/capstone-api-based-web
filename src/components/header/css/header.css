@@ -22,7 +22,7 @@ header nav .menu-items {
   list-style: none;
 }
 
-.gener-btn {
+.genre-btn {
   color: #fff;
   font-size: 24px;
   background-color: transparent;
@@ -32,13 +32,13 @@ header nav .menu-items {
   transition: 0.3s;
 }
 
-.gener-btn.active {
+.genre-btn.active {
   background-color: #db2525;
   border: 1px solid #db2525;
 
 }
 
-.gener-btn:hover {
+.genre-btn:hover {
   background-color: #db2525;
   border: 1px solid #db2525;
   cursor: pointer;
