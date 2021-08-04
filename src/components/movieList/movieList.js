@@ -1,10 +1,12 @@
 import './css/movieList.css';
 
 const makeList = async () => {
-  const response = await fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=351e94f667108cdc271b0892fb6a48a4');
+  // const response = await fetch('https://api.themoviedb.org/3/movie/top_rated/?api_key=351e94f667108cdc271b0892fb6a48a4');
+  const response = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=351e94f667108cdc271b0892fb6a48a4&with_genres=27');
   const json = await response.json();
   const movies = json.results;
   let list = document.querySelector('.movie-list');
+  list.innerHTML = '';
   movies.forEach((movie) => {
     list.innerHTML += `
       <div class="movie-card">
