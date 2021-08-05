@@ -5,15 +5,19 @@ const getComments = async (id) => {
     response = await response.json();
     const commentWrap = document.querySelector('.comments-wrap');
     commentWrap.innerHTML = "";
-    response.forEach((comment) => {
-        commentWrap.innerHTML += `<li class="comment">
-                                    <div class="comment-details">
-                                        <p class="date">${comment.creation_date}</p>
-                                        <p class="name">${comment.username}</p>
-                                    </div>
-                                    <p class="comment-text">${comment.comment}</p>
-                                </li>`
-    })
+    if(response.length > 0) {
+        response.forEach((comment) => {
+            commentWrap.innerHTML += `<li class="comment">
+                                        <div class="comment-details">
+                                            <p class="date">${comment.creation_date}</p>
+                                            <p class="name">${comment.username}</p>
+                                        </div>
+                                        <p class="comment-text">${comment.comment}</p>
+                                    </li>`
+        })
+        const counterWrap = document.querySelector('.comments-counter');
+        counterWrap.innerHTML = `(${response.length})`;
+    }
 }
 
 const addComment = (e, id, name, comment) => {
@@ -59,7 +63,7 @@ export const showMoviePopup =  async (commentBtn) => {
                                     </div>
                                 </div>
                                 <div class="comments">
-                                    <h2>Comments<span>(2)</span></h2>
+                                    <h2>Comments<span class="comments-counter">(0)</span></h2>
                                     <ul class="comments-wrap"></ul>
                                 </div>
                                 <form class="add-comment-form"> 
