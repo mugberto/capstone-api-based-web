@@ -1,9 +1,29 @@
 import './css/movieList.css';
-import { showMoviePopup } from '../moviePopup/moviePopup';
+import {
+  showMoviePopup
+} from '../moviePopup/moviePopup';
 
 const getLikes = (id, likesArr) => {
   const likesItem = likesArr.find((item) => item.item_id === id) || null;
   return likesItem === null ? 0 : likesItem.likes;
+};
+
+const addLike = async (btn) => {
+  const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/kqb4B7zblSLILXPp3BYH/likes', {
+    method: 'POST',
+    body: JSON.stringify({
+      item_id: Number(btn.dataset.key),
+    }),
+    headers: {
+      'content-type': 'application/json'
+    }
+  });
+  console.log(response.status);
+  if (response.status === 201) {
+    const likesResponse = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/kqb4B7zblSLILXPp3BYH/likes');
+    const likesArr = await likesResponse.json();
+    btn.parentElement.firstElementChild.innerHTML = `${getLikes(Number(btn.dataset.key), likesArr)} likes`;
+  }
 };
 
 const makeList = async (genre = 'top_rated') => {
@@ -27,7 +47,7 @@ const makeList = async (genre = 'top_rated') => {
         <div class="card-description">
           <div class="title-row">
             <h3>${movie.title}</h3>
-            <div>${getLikes(movie.id, likesArr)} likes</div>
+            <div><span>${getLikes(movie.id, likesArr)} likes</span><button type="button" class="like-btn" data-key="${movie.id}"><i class="far fa-heart"></i></button></div>
           </div>
           <button data-key="${movie.id}" class="comment-btn">Comment</button>
         </div>
@@ -35,9 +55,15 @@ const makeList = async (genre = 'top_rated') => {
     `;
   });
   const commentBtns = [...document.querySelectorAll('.movie-card .comment-btn')];
+  const likeBtns = [...document.querySelectorAll('.like-btn')];
   commentBtns.forEach((commentBtn) => commentBtn.addEventListener('click', () => showMoviePopup(commentBtn)));
+  likeBtns.forEach((btn) => btn.addEventListener('click', () => addLike(btn)));
+
 }
 
 const movieList = () => '<section class="movie-list"></section>';
 
-export { movieList, makeList };
+export {
+  movieList,
+  makeList
+};
