@@ -1,4 +1,5 @@
 import './css/movieList.css';
+import { showMoviePopup } from '../moviePopup/moviePopup';
 
 const makeList = async (genre='top_rated') => {
   let response;
@@ -25,6 +26,8 @@ const makeList = async (genre='top_rated') => {
       </div>
     `
   });
+  const commentBtns = [...document.querySelectorAll('.movie-card .comment-btn')];
+  commentBtns.forEach((commentBtn) => commentBtn.addEventListener('click', () => showMoviePopup(commentBtn)));
 }
 
 const movieList = () => {
