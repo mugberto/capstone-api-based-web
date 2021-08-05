@@ -1,4 +1,5 @@
 import './css/movieList.css';
+import { showMoviePopup } from '../moviePopup/moviePopup';
 
 const getLikes = (id, likesArr) => {
   const likesItem = likesArr.find((item) => item.item_id === id) || null;
@@ -33,7 +34,9 @@ const makeList = async (genre = 'top_rated') => {
       </div>
     `;
   });
-};
+  const commentBtns = [...document.querySelectorAll('.movie-card .comment-btn')];
+  commentBtns.forEach((commentBtn) => commentBtn.addEventListener('click', () => showMoviePopup(commentBtn)));
+}
 
 const movieList = () => '<section class="movie-list"></section>';
 
