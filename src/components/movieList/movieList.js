@@ -20,7 +20,7 @@ const addLike = async (btn) => {
   if (response.status === 201) {
     const likesResponse = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/kqb4B7zblSLILXPp3BYH/likes');
     const likesArr = await likesResponse.json();
-    btn.parentElement.firstElementChild.innerHTML = `${getLikes(Number(btn.dataset.key), likesArr)} likes`;
+    btn.parentElement.firstElementChild.innerHTML = `${getLikes(Number(btn.dataset.key), likesArr)}&nbsp;likes`;
   }
 };
 
@@ -45,7 +45,7 @@ const makeList = async (genre = 'top_rated') => {
         <div class="card-description">
           <div class="title-row">
             <h3>${movie.title}</h3>
-            <div><span>${getLikes(movie.id, likesArr)} likes</span> <button type="button" class="like-btn" data-key="${movie.id}"><i class="fa fa-heart"></i></button></div>
+            <div><span>${getLikes(movie.id, likesArr)}&nbsp;likes</span>&nbsp;<button type="button" class="like-btn" data-key="${movie.id}"><i class="fa fa-heart"></i></button></div>
           </div>
           <button data-key="${movie.id}" class="comment-btn">Comment</button>
         </div>
