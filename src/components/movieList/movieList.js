@@ -1,7 +1,5 @@
 import './css/movieList.css';
-import {
-  showMoviePopup
-} from '../moviePopup/moviePopup';
+import { showMoviePopup } from '../moviePopup/moviePopup';
 
 const getLikes = (id, likesArr) => {
   const likesItem = likesArr.find((item) => item.item_id === id) || null;
@@ -47,7 +45,7 @@ const makeList = async (genre = 'top_rated') => {
         <div class="card-description">
           <div class="title-row">
             <h3>${movie.title}</h3>
-            <div><span>${getLikes(movie.id, likesArr)} likes</span><button type="button" class="like-btn" data-key="${movie.id}"><i class="far fa-heart"></i></button></div>
+            <div><span>${getLikes(movie.id, likesArr)} likes</span> <button type="button" class="like-btn" data-key="${movie.id}"><i class="fa fa-heart"></i></button></div>
           </div>
           <button data-key="${movie.id}" class="comment-btn">Comment</button>
         </div>
