@@ -1,5 +1,6 @@
 import './css/moviePopup.css';
 
+<<<<<<< HEAD
 const getComments = async (id) => {
     let response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/dAaUSAPTSkpT2Q5FkoUF/comments?item_id=${id}`)
     response = await response.json();
@@ -42,6 +43,18 @@ export const showMoviePopup =  async (commentBtn) => {
         const popupWrap = document.querySelector('.popupWrap');
         popupWrap.style.display = 'flex';
         popupWrap.innerHTML = `
+=======
+export const showMoviePopup = async (commentBtn) => {
+  await fetch(`https://api.themoviedb.org/3/movie/${commentBtn.dataset.key}?api_key=8c5cae2e7a2a28ebed0be230de325abe&language=en-US`)
+    .then((resp) => resp.json())
+    .then((data) => {
+      let genre = data.genres.map((genre) => genre.name);
+      genre = genre.join(', ');
+      console.log(genre);
+      const popupWrap = document.querySelector('.popupWrap');
+      popupWrap.style.display = 'flex';
+      popupWrap.innerHTML = `
+>>>>>>> develop
                             <div class="popupContentWrap">
                                 <div class="exit-btn">
                                     <i class="far fa-times-circle"></i>
@@ -70,6 +83,7 @@ export const showMoviePopup =  async (commentBtn) => {
                                 </form>
                             </div>
         `;
+<<<<<<< HEAD
         const closePopup = document.querySelector('.popupContentWrap .exit-btn i');
         const nameInput = document.querySelector('.add-comment-form input[type="text"]');
         const commentInput = document.querySelector('.add-comment-form textarea');
@@ -83,10 +97,14 @@ export const showMoviePopup =  async (commentBtn) => {
         getComments(data.id)
     })
 }
+=======
+      const closePopup = document.querySelector('.popupContentWrap .exit-btn i');
+      closePopup.addEventListener('click', () => popupWrap.style.display = 'none');
+      console.log(data);
+    });
+};
+>>>>>>> develop
 
-export const moviePopupTemplate = () => {
-    return `
+export const moviePopupTemplate = () => `
         <div class="popupWrap"></div>
-    `
-}
-
+    `;
