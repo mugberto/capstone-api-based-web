@@ -13,10 +13,10 @@ const addLike = async (btn) => {
       item_id: Number(btn.dataset.key),
     }),
     headers: {
-      'content-type': 'application/json'
-    }
+      'content-type': 'application/json',
+    },
   });
-  console.log(response.status);
+
   if (response.status === 201) {
     const likesResponse = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/kqb4B7zblSLILXPp3BYH/likes');
     const likesArr = await likesResponse.json();
@@ -56,12 +56,11 @@ const makeList = async (genre = 'top_rated') => {
   const likeBtns = [...document.querySelectorAll('.like-btn')];
   commentBtns.forEach((commentBtn) => commentBtn.addEventListener('click', () => showMoviePopup(commentBtn)));
   likeBtns.forEach((btn) => btn.addEventListener('click', () => addLike(btn)));
-
-}
+};
 
 const movieList = () => '<section class="movie-list"></section>';
 
 export {
   movieList,
-  makeList
+  makeList,
 };

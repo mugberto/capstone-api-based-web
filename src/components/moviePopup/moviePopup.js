@@ -1,15 +1,15 @@
 import './css/moviePopup.css';
 
-export const showMoviePopup =  async (commentBtn) => {
-    await fetch(`https://api.themoviedb.org/3/movie/${commentBtn.dataset.key}?api_key=8c5cae2e7a2a28ebed0be230de325abe&language=en-US`)
+export const showMoviePopup = async (commentBtn) => {
+  await fetch(`https://api.themoviedb.org/3/movie/${commentBtn.dataset.key}?api_key=8c5cae2e7a2a28ebed0be230de325abe&language=en-US`)
     .then((resp) => resp.json())
     .then((data) => {
-        let genre = data.genres.map((genre) => genre.name);
-        genre = genre.join(', ');
-        console.log(genre);
-        const popupWrap = document.querySelector('.popupWrap');
-        popupWrap.style.display = 'flex';
-        popupWrap.innerHTML = `
+      let genre = data.genres.map((genre) => genre.name);
+      genre = genre.join(', ');
+      console.log(genre);
+      const popupWrap = document.querySelector('.popupWrap');
+      popupWrap.style.display = 'flex';
+      popupWrap.innerHTML = `
                             <div class="popupContentWrap">
                                 <div class="exit-btn">
                                     <i class="far fa-times-circle"></i>
@@ -53,15 +53,12 @@ export const showMoviePopup =  async (commentBtn) => {
                                 </form>
                             </div>
         `;
-        const closePopup = document.querySelector('.popupContentWrap .exit-btn i');
-        closePopup.addEventListener('click', () => popupWrap.style.display = "none");
-        console.log(data)
-    })
-}
+      const closePopup = document.querySelector('.popupContentWrap .exit-btn i');
+      closePopup.addEventListener('click', () => popupWrap.style.display = 'none');
+      console.log(data);
+    });
+};
 
-export const moviePopupTemplate = () => {
-    return `
+export const moviePopupTemplate = () => `
         <div class="popupWrap"></div>
-    `
-}
-
+    `;
