@@ -18,6 +18,7 @@ const getComments = async (id) => {
         const counterWrap = document.querySelector('.comments-counter');
         counterWrap.innerHTML = `(${response.length})`;
     }
+    return response.length;
 }
 
 const addComment = (e, id, name, comment) => {
