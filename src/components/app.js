@@ -1,4 +1,4 @@
-import header from "./header/header";
+import header from './header/header';
 import './css/app.css';
 import footer from "./footer/footer";
 import { movieList } from "./movieList/movieList";
