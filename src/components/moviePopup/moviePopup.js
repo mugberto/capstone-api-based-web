@@ -1,6 +1,6 @@
 import './css/moviePopup.css';
 
-const commentCounter = require('../../counters/commentcounter.js');
+const commentCounter = require('../../counters/commentcounter');
 
 const getComments = async (id) => {
   let response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/dAaUSAPTSkpT2Q5FkoUF/comments?item_id=${id}`);
