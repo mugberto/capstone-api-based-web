@@ -1,5 +1,6 @@
 header {
   background-color: rgba(0, 0, 0, 0.3);
+  padding: 8px 15px;
 }
 
 header nav {
@@ -11,7 +12,7 @@ header nav {
 }
 
 header nav .logo img {
-  max-width: 180px;
+  max-width: 140px;
 }
 
 header nav .menu-items {
@@ -24,7 +25,7 @@ header nav .menu-items {
 
 .genre-btn {
   color: #fff;
-  font-size: 24px;
+  font-size: 16px;
   background-color: transparent;
   border: 1px solid transparent;
   outline: none;
@@ -42,4 +43,22 @@ header nav .menu-items {
   border: 1px solid #db2525;
   cursor: pointer;
   transition: 0.3s;
+}
+
+@media screen and (max-width: 767.98px) {
+  header nav {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+
+  header nav .menu-items {
+    gap: 10px;
+  } 
+
+  .genre-btn {
+    font-size: 14px;
+  }
 }

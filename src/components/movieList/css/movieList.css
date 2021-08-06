@@ -2,14 +2,15 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  width: 1440px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   min-height: calc(100vh - 87.5px - 82px);
 }
 
 .movie-card {
-  width: 30%;
-  padding: 2rem;
+  width: 33%;
+  padding: 1.5rem;
 }
 
 .poster {
@@ -29,6 +30,26 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   margin-bottom: 2rem;
+  gap: 5px;
+  align-items: flex-start;
+}
+
+.title-row h3 {
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 500;
+  width: 70%;
+}
+
+.likes {
+  padding-top: 1px;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1px;
+  line-height: 27px;
+  font-size: 14px;
 }
 
 .comment-btn {
@@ -54,4 +75,36 @@
   font-size: 1.2rem;
   line-height: 0;
   color: #db2525;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.like-btn:hover {
+  transition: 0.3s;
+  transform: scale(1.1);
+}
+
+@media screen and (max-width:991.98px) {
+  .movie-list {
+    max-width: 767px;
+  }
+
+  .movie-card {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width:575.98px) {
+  .movie-list {
+    max-width: 400px;
+  }
+
+  .movie-card {
+    width: 100%;
+  }
+
+  .title-row h3 {
+    font-size: 18px;
+    line-height: 24px;
+  }
 }

@@ -158,3 +158,23 @@
   color: #db2525;
   transition: 0.3s;
 }
+
+@media screen and (max-width:767.98px) {
+  .popupTop {
+    flex-direction: column;
+  }
+  
+  .movie-image {
+    width: 100%;
+    padding: 0 15px;
+    max-width: 300px;
+  }
+  
+  .movie-image img {
+    max-width: 100%;
+  }
+  
+  .movie-details {
+    width: 100%;
+  }
+}
