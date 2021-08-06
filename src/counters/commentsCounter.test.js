@@ -1,4 +1,4 @@
-/* eslint-disable no-unresolved extensions*/
+/* eslint-disable no-unresolved, extensions */
 const commentCounter = require('./commentCounter');
 
 it('commentCounter([0, 2, 4, 4]) should return number', () => {
