@@ -6,7 +6,10 @@ const makeNavBtn = () => {
   const allBtn = document.querySelectorAll('.genre-btn');
   allBtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-      allBtn.forEach((item) => item.classList.remove('active'));
+      allBtn.forEach((item) => {
+        item.classList.remove('active');
+        item.firstElementChild.innerHTML = '';
+      });
       e.target.classList.add('active');
       switch (e.target.textContent) {
         case 'Top Rated':
@@ -32,9 +35,9 @@ const header = () => `
                     <img src="${logo}" alt="logo">
                 </a>
                 <ul class="menu-items">
-                    <li class="menu-item"><button class="genre-btn active" type="button">Top Rated</button></li>
-                    <li class="menu-item"><button class="genre-btn" type="button">Action</button></li>
-                    <li class="menu-item"><button class="genre-btn" type="button">Horror</button></li>
+                    <li class="menu-item"><button id="top_rated" class="genre-btn active" type="button">Top Rated<span></span></button></li>
+                    <li class="menu-item"><button id="action" class="genre-btn" type="button">Action<span></span></button></li>
+                    <li class="menu-item"><button id="horror" class="genre-btn" type="button">Horror<span></span></button></li>
                 </ul>
             </nav>
         </header>

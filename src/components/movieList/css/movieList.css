@@ -33,13 +33,11 @@
 
 .comment-btn {
   display: block;
-  border: none;
   background-color: #db2525;
   color: white;
   transition: 0.3s;
   border: 1px solid #db2525;
   padding: 1em 2em;
-  transition: 0.3s;
   cursor: pointer;
 }
 

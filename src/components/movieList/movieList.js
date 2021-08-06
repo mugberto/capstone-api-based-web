@@ -1,5 +1,6 @@
 import './css/movieList.css';
 import { showMoviePopup } from '../moviePopup/moviePopup';
+import movieCounter from '../../counters/movieCounter';
 
 const getLikes = (id, likesArr) => {
   const likesItem = likesArr.find((item) => item.item_id === id) || null;
@@ -33,7 +34,6 @@ const makeList = async (genre = 'top_rated') => {
   }
   const json = await response.json();
   const movies = json.results;
-
   const likesResponse = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/kqb4B7zblSLILXPp3BYH/likes');
   const likesArr = await likesResponse.json();
   const list = document.querySelector('.movie-list');
@@ -52,6 +52,21 @@ const makeList = async (genre = 'top_rated') => {
       </div>
     `;
   });
+
+  switch (genre) {
+    case 'top_rated':
+      document.getElementById('top_rated').firstElementChild.innerHTML = `(${movieCounter(movies)})`;
+      break;
+    case 28:
+      document.getElementById('action').firstElementChild.innerHTML = `(${movieCounter(movies)})`;
+      break;
+    case 27:
+      document.getElementById('horror').firstElementChild.innerHTML = `(${movieCounter(movies)})`;
+      break;
+    default:
+      break;
+  }
+
   const commentBtns = [...document.querySelectorAll('.movie-card .comment-btn')];
   const likeBtns = [...document.querySelectorAll('.like-btn')];
   commentBtns.forEach((commentBtn) => commentBtn.addEventListener('click', () => showMoviePopup(commentBtn)));

@@ -18,7 +18,7 @@
   max-width: 800px;
   overflow-y: auto;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
-  background-color: #111111;
+  background-color: #111;
   padding: 20px 0;
 }
 
@@ -59,13 +59,13 @@
   padding: 0 15px;
 }
 
-.movie-details h2{
+.movie-details h2 {
   font-size: 28px;
   color: #fff;
   margin-bottom: 20px;
 }
 
-.movie-details p{
+.movie-details p {
   font-size: 16px;
   color: #999;
   margin-bottom: 10px;
@@ -128,7 +128,8 @@
   margin-bottom: 10px;
 }
 
-.add-comment-form input, .add-comment-form textarea {
+.add-comment-form input,
+.add-comment-form textarea {
   background-color: transparent;
   color: #999;
   font-size: 16px;
@@ -144,10 +145,8 @@
 .add-comment-form button {
   margin-top: 30px;
   display: block;
-  border: none;
   background-color: #db2525;
   color: white;
-  transition: 0.3s;
   border: 1px solid #db2525;
   padding: 1em 2em;
   transition: 0.3s;
@@ -159,5 +158,3 @@
   color: #db2525;
   transition: 0.3s;
 }
-
-
