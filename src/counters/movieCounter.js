@@ -1,3 +1,3 @@
 const movieCounter = (movies) => movies.length;
 
-export default movieCounter;
+module.exports = movieCounter;

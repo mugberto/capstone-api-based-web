@@ -53,10 +53,9 @@ header nav .menu-items {
 }
 
 @media screen and (max-width: 575.98px) {
-
   header nav .menu-items {
     gap: 10px;
-  } 
+  }
 
   .genre-btn {
     font-size: 14px;
