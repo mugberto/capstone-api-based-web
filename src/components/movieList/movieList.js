@@ -45,7 +45,7 @@ const makeList = async (genre = 'top_rated') => {
         <div class="card-description">
           <div class="title-row">
             <h3>${movie.title}</h3>
-            <div><span>${getLikes(movie.id, likesArr)}&nbsp;likes</span>&nbsp;<button type="button" class="like-btn" data-key="${movie.id}"><i class="fa fa-heart"></i></button></div>
+            <div class="likes"><span>${getLikes(movie.id, likesArr)}&nbsp;likes</span>&nbsp;<button type="button" class="like-btn" data-key="${movie.id}"><i class="fa fa-heart"></i></button></div>
           </div>
           <button data-key="${movie.id}" class="comment-btn">Comment</button>
         </div>
