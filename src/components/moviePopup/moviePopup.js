@@ -1,4 +1,3 @@
-/* eslint-disable no-unresolved, extensions */
 import './css/moviePopup.css';
 
 const commentCounter = require('../../counters/commentCounter.js');
