@@ -1,4 +1,4 @@
-const commentCounter = require('./commentCounter');
+const commentCounter = require('./commentcounter');
 
 it('commentCounter([0, 2, 4, 4]) should return number', () => {
   expect(typeof commentCounter([0, 2, 4, 4])).toBe('number');
