@@ -1,0 +1,180 @@
+.popupWrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 0 15px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupContentWrap {
+  max-height: 90%;
+  width: 100%;
+  max-width: 800px;
+  overflow-y: auto;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+  background-color: #111;
+  padding: 20px 0;
+}
+
+.exit-btn {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 15px;
+  margin-bottom: 15px;
+}
+
+.exit-btn i {
+  color: #fff;
+  font-size: 26px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.exit-btn i:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.popupTop {
+  display: flex;
+}
+
+.movie-image {
+  width: 40%;
+  padding: 0 15px;
+}
+
+.movie-image img {
+  max-width: 100%;
+}
+
+.movie-details {
+  width: 60%;
+  padding: 0 15px;
+}
+
+.movie-details h2 {
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.movie-details p {
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.movie-details span {
+  color: #fff;
+}
+
+.comments {
+  padding: 0 15px;
+  margin-top: 30px;
+}
+
+.comments h2 {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.comments h2 span {
+  font-size: 20px;
+}
+
+.comments-wrap {
+  list-style: none;
+}
+
+.comment {
+  margin-top: 20px;
+}
+
+.comment-details {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.comment-details p {
+  font-size: 16px;
+  color: #999;
+}
+
+.comment-text {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.add-comment-form {
+  padding: 0 15px;
+  margin-top: 30px;
+}
+
+.add-comment-form h2 {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.add-comment-form input,
+.add-comment-form textarea {
+  background-color: transparent;
+  color: #999;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid #999;
+  display: block;
+  padding: 8px 12px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.add-comment-form button {
+  margin-top: 30px;
+  display: block;
+  background-color: #db2525;
+  color: white;
+  border: 1px solid #db2525;
+  padding: 1em 2em;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.add-comment-form button:hover {
+  background-color: transparent;
+  color: #db2525;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 767.98px) {
+  .popupTop {
+    flex-direction: column;
+  }
+
+  .movie-image {
+    width: 100%;
+    padding: 0 15px;
+    max-width: 300px;
+  }
+
+  .movie-image img {
+    max-width: 100%;
+  }
+
+  .movie-details {
+    width: 100%;
+  }
+}

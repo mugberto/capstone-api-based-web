@@ -1,0 +1,111 @@
+.movie-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 87.5px - 82px);
+  padding-top: 80px;
+}
+
+.movie-card {
+  width: 33%;
+  padding: 1.5rem;
+}
+
+.poster {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-description {
+  color: white;
+  background-color: #191919;
+  padding: 1rem;
+}
+
+.title-row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 5px;
+  align-items: flex-start;
+}
+
+.title-row h3 {
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 500;
+  width: 70%;
+}
+
+.likes {
+  padding-top: 1px;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1px;
+  line-height: 27px;
+  font-size: 14px;
+}
+
+.comment-btn {
+  display: block;
+  background-color: #db2525;
+  color: white;
+  transition: 0.3s;
+  border: 1px solid #db2525;
+  padding: 1em 2em;
+  cursor: pointer;
+}
+
+.comment-btn:hover {
+  background-color: transparent;
+  color: #db2525;
+  transition: 0.3s;
+}
+
+.like-btn {
+  background-color: #0000;
+  border: none;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 0;
+  color: #db2525;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.like-btn:hover {
+  transition: 0.3s;
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 991.98px) {
+  .movie-list {
+    max-width: 767px;
+  }
+
+  .movie-card {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .movie-list {
+    max-width: 400px;
+  }
+
+  .movie-card {
+    width: 100%;
+  }
+
+  .title-row h3 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
